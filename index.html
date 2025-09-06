@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>47屆電算社 - 一起享受CHILL的程式時光</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #667eea;
+            white-space: nowrap;
+            animation: typing 3s steps(20, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #667eea;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <h1 class="text-2xl font-bold">師大附中47屆電算社</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-blue-200 transition-colors">關於我們</a>
+                    <a href="#courses" class="hover:text-blue-200 transition-colors">社課內容</a>
+                    <a href="#activities" class="hover:text-blue-200 transition-colors">社團活動</a>
+                    <a href="#join" class="hover:text-blue-200 transition-colors">加入我們</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold mb-6">一起享受很CHILL的社團時光吧！</h2>
+            <p class="text-xl mb-8 typing-animation inline-block">歡迎對程式設計有興趣的你加入電算社~</p>
+            <div class="flex justify-center space-x-4 text-6xl mb-8">
+                <img src="img\cpp.png" class="animate-bounce inline-block w-16 h-16" />
+                <img src="img\vscode.png" class="animate-bounce inline-block w-16 h-16" style="animation-delay: 0.1s" />
+                <img src="img\python.png" class="animate-bounce inline-block w-16 h-16" style="animation-delay: 0.2s" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">歡迎什麼特質的人加入呢？</h3>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 card-hover">
+                    <div class="text-center">
+                        <div class="text-6xl mb-6"></div>
+                        <h4 class="text-2xl font-bold mb-4 text-gray-800">不需要有程式基礎！</h4>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            只要對電腦或邏輯有興趣或疑問想多加了解的都歡迎加入我們～<br>
+                            社團中可以增加對程式語言的理解，多一個對未來是否走資訊產業的探索！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">📚 社課內容</h3>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <img src="img\python.png" width="80" height="80" class="block mx-auto" alt="Python">
+                        <h4 class="text-2xl font-bold mb-4 text-blue-600">Python 程式設計</h4>
+                        <p class="text-gray-600 mb-6">學習最受歡迎的程式語言，從基礎語法到實際應用</p>
+
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
+                    <div class="text-center">
+                        <img src="img\cpp.png" width="80" height="80" class="block mx-auto" alt="C++">
+                        <h4 class="text-2xl font-bold mb-4 text-purple-600">C++ 程式設計</h4>
+                        <p class="text-gray-600 mb-6">深入學習系統程式設計，培養邏輯思維能力</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">🙌🏻 社團以外的活動</h3>
+            <p class="text-center text-lg text-gray-600 mb-12">除了社課外，我們還會舉辦活動：</p>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="text-center card-hover rounded-2xl">
+                    <div class="bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl p-8 ">
+                        <h4 class="text-xl font-bold mb-3 text-orange-600">秋烤活動</h4>
+                        <p class="text-gray-600">在秋高氣爽的季節，一起烤肉聊天，增進社員感情</p>
+                    </div>
+                </div>
+
+                <div class="text-center card-hover rounded-2xl">
+                    <div class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 ">
+                        <h4 class="text-xl font-bold mb-3 text-blue-600">寒訓營隊</h4>
+                        <p class="text-gray-600">寒假期間的密集訓練，與社員們一起來個三天兩夜的旅行</p>
+                    </div>
+                </div>
+
+                <div class="text-center card-hover rounded-2xl">
+                    <div class="bg-gradient-to-br from-green-100 to-emerald-100 rounded-2xl p-8 ">
+                        <h4 class="text-xl font-bold mb-3 text-green-600">靜態展</h4>
+                        <p class="text-gray-600">讓你發揮創意的靜態展，展現電資領域的學習成果</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">🍀 為什麼選擇電算社？</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <img src="img\mikado_pheasant.png" class="inline-block w-14 h-13" />
+                    <h4 class="font-bold mb-2 text-gray-800">沒有學長姐制</h4>
+                    <p class="text-sm text-gray-600">只有學長學帝雉</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <div class="text-4xl mb-3">💻</div>
+                    <h4 class="font-bold mb-2 text-gray-800">學程式設計</h4>
+                    <p class="text-sm text-gray-600">實用的技能培養</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <div class="text-4xl mb-3">📝</div>
+                    <h4 class="font-bold mb-2 text-gray-800">製作學習歷程</h4>
+                    <p class="text-sm text-gray-600">豐富升學資料</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center shadow-lg card-hover">
+                    <div class="text-4xl mb-3">😉</div>
+                    <h4 class="font-bold mb-2 text-gray-800">零壓力環境</h4>
+                    <p class="text-sm text-gray-600">沒有人際和成績壓力</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-xl text-gray-700 font-medium">這麼好康的社團還在等什麼～趕快加入我們吧！</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-8">🌟 趕快填上101加入電算社！</h3>
+            <p class="text-xl mb-8">歡迎對程式設計有興趣的你加入電算社~</p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center space-x-3 mb-4">
+                <h5 class="text-xl font-bold">47屆電算社</h5>
+            </div>
+            <p class="text-gray-400 mb-4">一起享受很CHILL的社團時光吧！</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToJoin() {
+            document.getElementById('join').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9773028b54b18f25',t:'MTc1NjU0MzUwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
