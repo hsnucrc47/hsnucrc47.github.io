@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img\favicon.png" type="image/x-icon">
+    <title>404 - 頁面不存在 | 47屆電算社</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+        .code-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+
+        .code-char {
+            position: absolute;
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+            animation: rain 4s linear infinite;
+        }
+
+        @keyframes rain {
+            0% {
+                transform: translateY(-100vh);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Code Rain Background -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <h1 class="text-2xl font-bold">師大附中47屆電算社</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="https://hsnucrc47.github.io/" class="hover:text-blue-200 transition-colors">回到首頁</a>
+                    <a href="https://hsnucrc47.github.io/#about" class="hover:text-blue-200 transition-colors">關於我們</a>
+                    <a href="https://hsnucrc47.github.io/#courses"
+                        class="hover:text-blue-200 transition-colors">社課內容</a>
+                    <a href="https://hsnucrc47.github.io/#activities"
+                        class="hover:text-blue-200 transition-colors">社團活動</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 404 Main Content -->
+    <main class="flex-1 flex items-center justify-center py-16 relative">
+        <div class="container mx-auto px-6 text-center">
+            <!-- 404 Number -->
+            <div class="mb-8">
+                <h1
+                    class="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 glitch">
+                    404
+                </h1>
+            </div>
+
+            <!-- Error Message -->
+            <div class="mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">糟糕！頁面走丟了</h2>
+                <p class="text-xl text-gray-600 mb-6">看起來這個頁面正在學習隱身術，但還沒學會現身...</p>
+            </div>
+            <div class="flex justify-center space-x-4 text-6xl mb-8">
+                <img src="img\cpp.png" class="animate-bounce inline-block w-16 h-16" />
+                <img src="img\vscode.png" class="animate-bounce inline-block w-16 h-16" style="animation-delay: 0.1s" />
+                <img src="img\python.png" class="animate-bounce inline-block w-16 h-16" style="animation-delay: 0.2s" />
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                <button onclick="goHome()"
+                    class="gradient-bg text-white px-8 py-4 rounded-full font-semibold text-lg card-hover pulse-animation">
+                    回到首頁
+                </button>
+                <button onclick="goBack()"
+                    class="bg-white text-gray-800 border-2 border-gray-300 px-8 py-4 rounded-full font-semibold text-lg card-hover hover:bg-gray-50">
+                    返回上頁
+                </button>
+            </div>
+
+            <!-- Fun Programming Joke -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 max-w-2xl mx-auto card-hover">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">程式小幽默 💻</h3>
+                <p class="text-lg text-gray-600 mb-4" id="joke">
+                    為什麼程式設計師總是搞混萬聖節和聖誕節？
+                </p>
+                <p class="text-base text-gray-500" id="punchline" style="display: none;">
+                    因為 Oct 31 == Dec 25 😄
+                </p>
+                <button onclick="showPunchline()" id="jokeBtn"
+                    class="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors">
+                    看答案
+                </button>
+            </div>
+
+            <!-- Helpful Links -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">或許你在找這些？</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <a href="/" class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="text-3xl mb-3">🏠</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">首頁</h4>
+                        <p class="text-gray-600 text-sm">回到電算社主頁</p>
+                    </a>
+                    <a href="#courses" class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="text-3xl mb-3">📚</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">社課內容</h4>
+                        <p class="text-gray-600 text-sm">查看課程安排</p>
+                    </a>
+                    <a href="#join" class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h4 class="font-semibold text-gray-800 mb-2">加入我們</h4>
+                        <p class="text-gray-600 text-sm">成為電算社一員</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg mb-2">師大附中47屆電算社</p>
+            <p class="text-blue-200">一起享受很CHILL的程式時光！</p>
+        </div>
+    </footer>
+
+    <script>
+        // Go back to previous page
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '/';
+            }
+        }
+
+        // Go to home page
+        function goHome() {
+            window.location.href = '/';
+        }
+
+        // Show joke punchline
+        function showPunchline() {
+            document.getElementById('punchline').style.display = 'block';
+            document.getElementById('jokeBtn').style.display = 'none';
+        }
+
+        // Create code rain effect
+        function createCodeRain() {
+            const codeChars = ['0', '1', '{', '}', '(', ')', ';', '=', '+', '-', '*', '/', '<', '>', 'if', 'for', 'int', 'var'];
+            const container = document.getElementById('codeRain');
+
+            function createChar() {
+                const char = document.createElement('div');
+                char.className = 'code-char';
+                char.textContent = codeChars[Math.floor(Math.random() * codeChars.length)];
+                char.style.left = Math.random() * 100 + '%';
+                char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                char.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                container.appendChild(char);
+
+                setTimeout(() => {
+                    if (char.parentNode) {
+                        char.parentNode.removeChild(char);
+                    }
+                }, 5000);
+            }
+
+            setInterval(createChar, 200);
+        }
+
+        // Initialize code rain when page loads
+        window.addEventListener('load', createCodeRain);
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'97be03e6424a4a9f',t:'MTc1NzMyOTk5My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
